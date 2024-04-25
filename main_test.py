@@ -10,5 +10,9 @@ class TestMain(unittest.TestCase):
     def test_main(self, input, arg1,arg2):
         self.assertEqual(main(), 'yesyesyes')
 
+    @patch('main.main', return_value='yes')
+    def test_mock_main(self, main):
+        self.assertEqual(main(), 'yes')
+
 if __name__ == '__main__':
     unittest.main()
