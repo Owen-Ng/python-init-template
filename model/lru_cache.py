@@ -34,8 +34,8 @@ class Lru_cache:
         end = node.end
         start = node.start
 
-        end.head = start
-        start.tail = end
+        end.start = start
+        start.end = end
 
     def push(self, node):
         last = self.right.start
@@ -55,7 +55,8 @@ class Lru_cache:
             least_used_size = least_used.size
             least_used_key = least_used.key
             least_used_value = least_used.value
-            self.remove(least_used_size)
+            self.remove(least_used)
+            print(self.hm)
             del self.hm[least_used_key]
             self.deleteLocalImage(least_used_value)
 
