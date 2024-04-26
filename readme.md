@@ -10,3 +10,17 @@
 3.
 ## Install necessary packages
 ```pip install -r requirements.txt```
+
+## Appendix
+
+In a line, can you define what is word. WHat about /t, \n, double space, nth space
+
+Count the number of word.
+
+input structure 
+Assumption is words have spaces in between
+word1 word1
+word1 word1
+
+Output in lexical order
+<word> count
