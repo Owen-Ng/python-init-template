@@ -24,3 +24,7 @@ word1 word1
 
 Output in lexical order
 <word> count
+
+Follow up:
+In between word we can have multiple spaces, /t, or others
+With assumption a word consist of letters and numbers only.
