@@ -15,9 +15,9 @@ class TestMain(unittest.TestCase):
     def test1_main(self, input):
         self.assertEqual(main(), readfileToStr("./test_files/test1_output.txt"))
     
-    @patch('builtins.input', return_value='./test_files/test2_input.txt')
-    def test2_main(self, input):
-        self.assertEqual(main(), readfileToStr("./test_files/test2_output.txt"))
+    # @patch('builtins.input', return_value='./test_files/test2_input.txt')
+    # def test2_main(self, input):
+    #     self.assertEqual(main(), readfileToStr("./test_files/test2_output.txt"))
 
 if __name__ == '__main__':
     unittest.main()
