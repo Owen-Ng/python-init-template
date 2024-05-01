@@ -6,14 +6,14 @@ class KeyValueVersionController:
 
     # Input: key
     # output: latest_value
-    def GetLatest(self, key):
+    def GetLatest(self, key: str) -> str:
         if key not in self.keyValueMap:
             return "<NULL>"
         return self.keyValueMap[key][-1][-1]
 
     # input: key version
     # output: version, value
-    def Get(self, key, version = None):
+    def Get(self, key : str, version : str) -> tuple[int, str]:
         if key not in self.keyValueMap:
             return -1,"<NULL>"
         index_high_value = bisect.bisect_right(self.keyValueMap[key], version, key = lambda x : x[0])
@@ -25,7 +25,7 @@ class KeyValueVersionController:
 
     # input: key, value
     # output: version
-    def Put(self, key, value):
+    def Put(self, key: str, value : str) -> int:
         if key not in self.keyValueMap:
             self.keyValueMap[key] = []
         self.keyValueMap[key].append([self.version,value])
