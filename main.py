@@ -21,12 +21,13 @@ def main():
 
             if op == "GET": 
                 version, value = keyValueVersionController.Get(key, int(additional))
-
-                formatted_output = "GET " + key + "(#" + additional + ") = " + value
+                txt = "GET {key}(#{version}) = {value}"
+                formatted_output = txt.format(key=key,version =additional,value =value)# "GET " + key + "(#" + additional + ") = " + value
                 response.append(formatted_output)
             elif op == "PUT":
                 raw_output = keyValueVersionController.Put(key, additional)
-                formatted_output = "PUT(#" + str(raw_output) + ") "+ key + " = "+ str(additional) 
+                txt = "PUT(#{version}) {key} = {value}"
+                formatted_output = txt.format(version = raw_output, key = key, value = additional) #"PUT(#" + str(raw_output) + ") "+ key + " = "+ str(additional) 
                 response.append(formatted_output)
             else:
                 response.append("Error input incorrect")
@@ -36,7 +37,8 @@ def main():
 
             if op == "GET":
                 raw_output =  keyValueVersionController.GetLatest(key)
-                formatted_output = "GET "+ key + " = " + raw_output
+                txt = "GET {key} = {value}"
+                formatted_output = txt.format(key = key, value = raw_output) # "GET "+ key + " = " + raw_output
                 response.append(formatted_output)
             else:
                 response.append("Error input incorrect")
